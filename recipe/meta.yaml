@@ -1,5 +1,5 @@
 {% set name = "yaqd-lightcon" %}
-{% set version = "2022.4.0" %}
+{% set version = "2022.6.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: c02d5659903e36f5029b6c27fdfde598c3ac836952dc3307060ab23825d5ab48
+  sha256: 1a65109007f39bcb684f5cf80801c61491479679e3cbf3a074ebfd3f2f2e8fa4
 
 build:
   number: 0
