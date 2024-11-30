@@ -7,11 +7,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 98f0eda16c8807e3c54845faaa68b302cad1150ce11db68bf27522427444128c
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - yaqd-lightcon-topas4-motor = yaqd_lightcon._lightcon_topas4_motor:LightconTopas4Motor.main
@@ -20,13 +20,13 @@ build:
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
     - flit
     - aiohttp
     - yaqd-core >=2020.10.1
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - aiohttp
     - yaqd-core >=2020.10.1
 
@@ -39,6 +39,7 @@ test:
     - yaqd-lightcon-topas4-shutter --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://yaq.fyi
